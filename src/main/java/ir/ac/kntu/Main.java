@@ -1,34 +1,35 @@
 package ir.ac.kntu;
 
+import ir.ac.kntu.gui.CalculatorGui;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 
-/**
- * @author Sina Rostami
- */
 public class Main extends Application {
 
     public static void main(String[] args) {
-        // todo: don't modify this method.
         launch(args);
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage stage) throws Exception {
 
-        // todo: create a CalculatorGui.
-        // todo: set its EventsHandlers.
-        // todo: create some Panes.
-        // todo: add your nodes to the panes (use CalculatorGui's interface (addNodesToPane)).
+        CalculatorGui calculatorGui = new CalculatorGui();
 
-        // todo: set your main pane to scene. (change argument of Scene constructor)
-        Scene scene = new Scene(new Pane());
+        calculatorGui.setEventsHandlers();
 
-        primaryStage.setScene(scene);
-        primaryStage.show();
-        // todo: enjoy your graphical calculator.
+        Pane fatherPane = new Pane();
+        fatherPane.setPrefSize(500, 550);
+
+        calculatorGui.addNodesToPane(fatherPane);
+
+        Scene scene = new Scene(fatherPane);
+
+        scene.setFill(Color.BLACK);
+        stage.setScene(scene);
+        stage.show();
     }
 }

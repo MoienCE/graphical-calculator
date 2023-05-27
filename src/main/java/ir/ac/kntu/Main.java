@@ -15,14 +15,14 @@ public class Main extends Application {
     }
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) {
 
         CalculatorGui calculatorGui = new CalculatorGui();
 
         calculatorGui.setEventsHandlers();
 
         Pane fatherPane = new Pane();
-        fatherPane.setPrefSize(500, 550);
+        fatherPane.setPrefSize(400, 500);
 
         calculatorGui.addNodesToPane(fatherPane);
 

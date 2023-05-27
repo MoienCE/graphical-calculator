@@ -1,9 +1,5 @@
 package ir.ac.kntu.logic;
 
-/**
- * @author sina rostami
- *
- */
 public class Calculator {
 
     public static double calculate(StringBuilder operand1, StringBuilder operand2, StringBuilder operator) {

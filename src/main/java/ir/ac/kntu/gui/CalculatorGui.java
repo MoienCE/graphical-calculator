@@ -14,7 +14,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
-
 public class CalculatorGui {
     private final TextField textField;
     private final Button zero;
@@ -193,22 +192,22 @@ public class CalculatorGui {
         colThree = new HBox(four, five, six, minus);
         colFour = new HBox(one, two, three, division);
         colFive = new HBox(clear, zero, equal, multiplication);
-        colOne.setMaxSize(420,40);
+        colOne.setMaxSize(Double.MAX_VALUE,Double.MAX_VALUE);
         colTwo.setMaxSize(Double.MAX_VALUE,Double.MAX_VALUE);
         colThree.setMaxSize(Double.MAX_VALUE,Double.MAX_VALUE);
         colFour.setMaxSize(Double.MAX_VALUE,Double.MAX_VALUE);
         colFive.setMaxSize(Double.MAX_VALUE,Double.MAX_VALUE);
-        colTwo.setPadding(new Insets(10, 0, 0, 30));
-        colTwo.setSpacing(10);
-        colThree.setPadding(new Insets(10, 0, 0, 30));
-        colThree.setSpacing(10);
-        colFour.setPadding(new Insets(10, 0, 0, 30));
-        colFour.setSpacing(10);
-        colFive.setPadding(new Insets(10, 0, 0, 30));
-        colFive.setSpacing(10);
-        textField.setPrefSize(500, 100);
+//        colTwo.setPadding(new Insets(0, 0, 0, 30));
+//        colTwo.setSpacing(0);
+//        colThree.setPadding(new Insets(0, 0, 0, 30));
+//        colThree.setSpacing(0);
+//        colFour.setPadding(new Insets(0, 0, 0, 30));
+//        colFour.setSpacing(0);
+//        colFive.setPadding(new Insets(0, 0, 0, 30));
+//        colFive.setSpacing(0);
+        textField.setPrefSize(400, 100);
+//        colOne.setTranslateX(10);
         zero.setPrefSize(100, 100);
-        colOne.snapPositionX(10);
         ImageView view0 = new ImageView(new Image("0.jpg"));
         view0.setPreserveRatio(true);
         view0.setFitHeight(100);
@@ -308,14 +307,11 @@ public class CalculatorGui {
 
     public void addNodesToPane(Pane pane) {
         setRows();
-        VBox vBox = new VBox(colTwo, colThree, colFour, colFive);
-        VBox vBox1 = new VBox(colOne);
-        vBox1.setAlignment(Pos.TOP_CENTER);
-        vBox.setAlignment(Pos.BOTTOM_CENTER);
+        VBox vBox = new VBox(colOne, colTwo, colThree, colFour, colFive);
+        vBox.setAlignment(Pos.CENTER);
         vBox.setMaxHeight(Double.MAX_VALUE);
         vBox.setMaxWidth(Double.MAX_VALUE);
         pane.getChildren().add(vBox);
-        pane.getChildren().add(vBox1);
 
     }
 }
